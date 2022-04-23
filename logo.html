@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+  <title>Document</title>
+
+  <style>
+
+    .container  {
+      width: 200px;
+      height: 200px;
+      /* border: 5px solid black; */
+      position: absolute;
+    }
+
+    .circleContainer {
+      width: 100%;
+      height: 100%;
+      /* border: 5px solid black; */
+      position: absolute;
+      animation: rotate 7s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s infinite;
+    }
+
+    .circle {
+      height: 50%;
+      width: 50%;
+      background-color: #438276;
+      /* border: 5px solid black; */
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .circleMid {
+      opacity: 0.5;
+      left: 12.5%;
+      top: 12.5%;
+       animation: circleAnim 7s ease 0s infinite;
+    }
+    
+    .circleLight {
+      opacity: 0.2;
+      left: 12.5%;
+      top: 37.5%;
+      animation: circleAnim 7s ease 0s infinite;
+    }
+    
+    .circleHard {
+      left: 37.5%;
+      top: 25%;
+      animation: circleAnim 7s ease 0s infinite;
+    }
+
+    #logoText {
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 250%;
+      top: 38%; 
+      left: 54.5%; 
+      position: absolute;
+      animation: circleTextAnim 7s ease 0s infinite;
+    }
+
+    @keyframes rotate {
+      12.5% {
+        transform: rotate(360deg);
+      }
+      25% {
+        transform: rotate(720deg);
+      }
+      37.5% {
+        transform: rotate(1080deg);
+      }
+      50% {
+        transform: rotate(1440deg);
+      }
+      62.5% {
+        transform: rotate(1800deg);
+      }
+      75% {
+        transform: rotate(2160deg);
+      }
+      87.5% {
+        transform: rotate(2520deg);
+      }
+      100% {
+        transform: rotate(2880deg);
+      }
+    }
+ 
+    @keyframes circleAnim {
+      10% {
+        transform: translateX(2.5888%) translateY(0px) scale(0.5);
+      }
+      90% {
+        transform: translateX(2.5888%) translateY(0px) scale(0.5);
+      }
+    }
+
+    @keyframes circleTextAnim {
+      0% {
+        opacity: 0;
+      }
+      10% {
+        opacity: 0;
+        transform: translateX(25%);
+      }
+      90% {
+        opacity: 0;
+        transform: translateX(25%);
+      }
+      0% {
+        opacity: 1;
+      }
+    }
+
+
+    #logoText::before {
+      content: "Tax";
+      color: whitesmoke;
+      border-color: #438276;
+    }
+
+    #logoText::after {
+      content: "izor";
+      color: #438276;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="circleContainer">
+      <div class="circle circleMid"></div>
+      <div class="circle circleLight"></div>
+      <div class="circle circleHard"></div>
+    </div>
+    <div id="logoText"></div>
+  </div>
+</body>
+</html>
